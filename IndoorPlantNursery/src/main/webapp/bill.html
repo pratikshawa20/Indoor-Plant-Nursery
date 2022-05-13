@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Bill details</title>
+<style>
+
+body{
+    display: flex;
+    background: url(smallp.jpg);
+    margin: 0;
+	padding: 0;
+	background-size: cover;
+	font-family: sans-serif;	
+}
+.bill
+{
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	transform: translate(-50%,-50%);
+	width: 40%;
+	height: 220px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+}
+.bill input
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.bill input[type="text"],
+.bill input[type="hidden"],select,option
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 20px;
+	font-size: 17px;
+}
+::placeholder
+{
+	color: rgba(255,255,255,.5);
+}
+.bill input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	background: #ff267e;
+	cursor: pointer;
+	border-radius: 10px;
+}
+.bill input[type="submit"]:hover
+{
+	background: #efed40;
+	color: #262626;
+}
+</style>
+<script>
+function d()
+{
+	document.f1.pri.value =document.f1.opt.value;
+	document.f1.hd.value =document.f1.opt.item(document.f1.opt.selectedIndex).text;
+	}
+</script>
+</head>
+<body>
+<div id='container'>
+  <div class='bill'>
+  <h2>Cash On Delivery</h2>
+<form action="billReceipt.jsp" method="post" name="f1">
+<input type="text" name="userName" placeholder="Enter Your Name" required>
+<br><br>
+Choose Plant: 
+<select name="opt" onchange="d()">
+<option>Select Plant</option>
+<option value="295"> Aralia golden Plant </option>
+<option value="255"> Aralia Variegated mini Plant </option>
+<option value="475"> Bamboo Palm </option>
+<option value="1,599"> Beautiful Poinsettia Plant </option>
+<option value="325"> Betel leaf Plant </option>
+<option value="199">Blue pearl potted plant succulent seeds </option>
+<option value="129">Bonsai Areca plant </option>
+<option value="445">Broken heart plant </option>
+<option value="149">buy cosmos purple flower plant </option>
+<option value="345">Cotton candy fern plant</option>
+<option value="499">Good luck green plant </option>
+<option value="179">Kalanchoe Orange plant </option>
+<option value="599">Leafy Lucky Plants Combo</option>
+<option value="145">Lemon grass </option>
+<option value="135">Lucky Bamboo plant </option>
+</select>
+<br><br>
+Plant Price: <input type="text" name="pri" readonly>
+			<input type="hidden" name="hd">
+			<br><br>
+Enter Quantity: <input type="text" name="qty">
+<br><br>
+<input type="submit" value="Create Bill and Print">
+</form>
+</div>
+</div>
+</body>
+</html>
